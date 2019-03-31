@@ -32,7 +32,7 @@
 				<br> Name: <input type="text" name="name"> </br>
 				<br> Gender: <input type="radio" name="gender" value="Male"> Male <input type="radio" name="gender" value="Female"> Female </br>
 				<br> Age: <input type="text" name="age"> </br>
-				<br> Personality type: <input type="text" name="Personality"> (Don't know your type ?)</br>
+				<br> Personality type: <input type="text" name="Personality"> <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type ?)</a></br>
 				<br> Favorite OS: 
 					<select name="OS">
 					  <option value="windows">Windows</option>
@@ -41,7 +41,11 @@
 					</select>
  				</br>
  				<br> Seeking age: <input type="text" name="min" value="min"> to <input type="text" name="max" value="max">  </br>
+ 				<br>
+                Upload photo <input type="file" name="picture">
+                </br>
  				<input type="submit" value="Submit">
+
 
 			</form>
 		</div>

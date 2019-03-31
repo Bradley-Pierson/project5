@@ -28,8 +28,15 @@
 		<div>
 			<h1>Thank you!</h1>
 			
-			<br>Welcome to Match <br>
-			<br> Now log in to see your matches! <br>
+			<br>
+
+			<?php
+			    $name = $_POST["name"];
+			    echo "Welcome to Match, " . $name;
+			?>
+
+			<br>
+			<br> <a href="matches.php">Now log in to see your matches!</a><br>
 
 		</div>
 
