@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="25169034-bbb3-419c-b216-f1b86b971fad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/matches-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/matches-submit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matches.php" beforeDir="false" afterPath="$PROJECT_DIR$/matches.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup-submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup-submit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/singles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/singles.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +33,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3132" />
+          <entry key="php" value="3140" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3133" />
+          <entry key="PLAIN_TEXT" value="3141" />
         </counts>
       </usages-collector>
     </session>
@@ -79,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matches-submit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1507">
-              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state relative-caret-position="-93">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -246,8 +243,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matches-submit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1507">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+        <state relative-caret-position="-93">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
         </state>
       </provider>
     </entry>

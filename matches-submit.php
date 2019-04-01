@@ -32,7 +32,7 @@
 			    echo $name;
 
 			    //get singles.txt in $contents
-			    $contents = file_get_contents(singles.txt);
+			    $contents = file_get_contents("singles.txt");
 
 
 			    $verName;
@@ -72,7 +72,7 @@
                         $info = substr($line, $commaPos);
                         $commaPos = strpos($info, ',');
 
-                        &verPersonality = substr($info, 0, $commaPos);
+                        $verPersonality = substr($info, 0, $commaPos);
                         $verPersonality1 = substr($verPersonality, 0, 1);
                         $verPersonality2 = substr($verPersonality, 1, 2);
                         $verPersonality3 = substr($verPersonality, 2, 3);
@@ -121,7 +121,7 @@
                         $info = substr($line, $commaPos);
                         $commaPos = strpos($info, ',');
 
-                        &personality = substr($info, 0, $commaPos);
+                        $personality = substr($info, 0, $commaPos);
                         $personality1 = substr($personality, 0, 1);
                         $personality2 = substr($personality, 1, 2);
                         $personality3 = substr($personality, 2, 3);
@@ -142,7 +142,7 @@
 
                         $maxAge = substr($info, 0, $commaPos);
 
-                    if($verGender != $gender && $verAge <= $maxAge $$ $verAge >= $minAge && $age <= $verMaxAge && $age >= $verMinAge && ($verPersonality1 == $personality1 || $verPersonality2 == $personality2 || $verPersonality3 == $personality3 || $verPersonality4 == $personality4) $$ $verOS == $os){
+                    if($verGender != $gender && $verAge <= $maxAge && $verAge >= $minAge && $age <= $verMaxAge && $age >= $verMinAge && ($verPersonality1 == $personality1 || $verPersonality2 == $personality2 || $verPersonality3 == $personality3 || $verPersonality4 == $personality4) && $verOS == $os){
                         echo $line;
                     }
                     $count = $lineEnd + 1;
