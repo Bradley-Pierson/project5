@@ -28,7 +28,7 @@
 		<div>
 			<h1>Returning User:</h1>
 
-			<form action="matches-submit.php" method="post">
+			<form action="matches-submit.php?name=$name" method="get">
 				<br> Name: <input type="text" name="name"> </br>
 				<input type="submit" value="Submit">
 			</form>
