@@ -35,9 +35,9 @@
 				<br> Personality type: <input type="text" name="Personality"> <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type ?)</a></br>
 				<br> Favorite OS: 
 					<select name="OS">
-					  <option value="windows">Windows</option>
-					  <option value="mac">Mac os</option>
-					  <option value="linux">Linux</option>
+					  <option value="Windows">Windows</option>
+					  <option value="Mac OS X">Mac OS X</option>
+					  <option value="Linux">Linux</option>
 					</select>
  				</br>
  				<br> Seeking age: <input type="text" name="min" value="min"> to <input type="text" name="max" value="max">  </br>
@@ -49,6 +49,8 @@
 
 			</form>
 		</div>
+
+
 
 		<!-- shared page bottom HTML -->
 		<div>

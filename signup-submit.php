@@ -33,6 +33,11 @@
 			<?php
 			    $name = $_POST["name"];
 			    echo "Welcome to Match, " . $name;
+    		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['Personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['picture']))
+                {
+                    $data = $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['Personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'] . "," . $_POST['picture'] . "\r\n";
+                    $ret = file_put_contents('singles.txt', $data, FILE_APPEND | LOCK_EX);
+                }
 			?>
 
 			<br>
