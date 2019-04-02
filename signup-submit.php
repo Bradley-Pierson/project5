@@ -5,18 +5,18 @@
 	you are going to write, signup.php and matches.php.
 	You can modify this file as necessary to move redundant code out to common.php.
 	-->
-	
+
 	<head>
 		<title>Match</title>
-		
+
 		<meta charset="utf-8" />
-		
+
 		<!-- instructor-provided CSS and JavaScript links; do not modify -->
 		<link href="heart.gif" type="image/gif" rel="shortcut icon" />
 		<link href="match.css" type="text/css" rel="stylesheet" />
-		
+
 		<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
-		
+
 	</head>
 
 	<body>
@@ -27,16 +27,23 @@
 
 		<div>
 			<h1>Thank you!</h1>
-			
+
 			<br>
 
 			<?php
 			    $name = $_POST["name"];
 			    echo "Welcome to Match, " . $name;
-    		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['Personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['picture']))
+			    $targetDir = "Images/";
+                $uploadFile = $targetDir.$_FILES['myfile']['name'];
+    		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['Personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['max']) && move_uploaded_file($_FILES['myfile']['tmp_name'],$uploadFile))
                 {
+                    echo "<br>file uploaded successfully";
                     $data = $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['Personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'] . "\n";
                     $ret = file_put_contents('singles.txt', $data, FILE_APPEND | LOCK_EX);
+
+                }
+                else{
+                    echo "<br>upload failed. Please make sure all fields are completed";
                 }
 			?>
 
@@ -50,11 +57,11 @@
 			<p>
 				This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site.
 			</p>
-			
+
 			<p>
 				Results and page (C) Copyright Match Inc.
 			</p>
-			
+
 			<ul>
 				<li>
 					<a href="index.php">

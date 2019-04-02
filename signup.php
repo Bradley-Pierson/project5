@@ -28,7 +28,7 @@
 		<div>
 			<h1>New User Signup:</h1>
 
-			<form action="signup-submit.php" method="post">
+			<form enctype="multipart/form-data" action="signup-submit.php" method="post">
 				<br> Name: <input type="text" name="name"> </br>
 				<br> Gender: <input type="radio" name="gender" value="Male"> Male <input type="radio" name="gender" value="Female"> Female </br>
 				<br> Age: <input type="text" name="age"> </br>
@@ -42,7 +42,7 @@
  				</br>
  				<br> Seeking age: <input type="text" name="min" value="min"> to <input type="text" name="max" value="max">  </br>
  				<br>
-                Upload photo <input type="file" name="picture">
+                Upload photo <input type="file" name="myfile">
                 </br>
  				<input type="submit" value="Submit">
 

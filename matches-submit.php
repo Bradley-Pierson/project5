@@ -29,7 +29,7 @@
 			<h1>Matches for: </h1>
 			<?php
 			    $name = $_GET["name"];
-			    echo $name . "<br>";
+			    echo $name . "<br><br><br>";
 
 			    //get singles.txt in $contents
 			    $contents = file_get_contents("singles.txt");
@@ -71,10 +71,25 @@
                 }
 
 
+                $dirname = "Images";
+
                 $count = 0;
                 while($count < sizeof($line)){
                     $infoArray = explode(",",$line[$count]);
                     $personName = $infoArray[0];
+                    $personFullName = explode(" ",$personName);
+                    $twoNames;
+                    $personFirstName;
+                    $personLastName;
+                    if(sizeof($personFullName) > 1){
+                        $twoNames = true;
+                        $personFirstName = strtolower($personFullName[0]);
+                        $personLastName = strtolower($personFullName[1]);
+                    }
+                    else {
+                        $twoNames = false;
+                        $personFirstName = strtolower($personFullName[0]);
+                    }
                     $gender = $infoArray[1];
                     $age = $infoArray[2];
                     $personality = $infoArray[3];
@@ -86,7 +101,17 @@
                     $minAge = $infoArray[5];
                     $maxAge = $infoArray[6];
                     if($verGender != $gender && $verAge <= $maxAge && $verAge >= $minAge && $age <= $verMaxAge && $age >= $verMinAge && ($verPersonality1 == $personality1 || $verPersonality2 == $personality2 || $verPersonality3 == $personality3 || $verPersonality4 == $personality4) && $verOS == $os){
-                        echo nl2br("Match: " . $line[$count]);
+
+                        if($twoNames == false){
+                            $image = $personFirstName . ".jpg";
+                            echo nl2br("<img src=Images/$image /> <h1>$personName<br>gender: $gender<br>age: $age<br>personality: $personality<br>OS: $os</h1>");
+
+                        }
+                        else {
+                            $image = $personFirstName . "_" . $personLastName . ".jpg";
+                            echo nl2br("<img src=Images/$image /> <h1>$personName<br>gender: $gender<br>age: $age<br>personality: $personality<br>OS: $os</h1>");
+
+                        }
                     }
                     $count = $count + 1;
                 }
