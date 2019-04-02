@@ -38,7 +38,7 @@
     		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['Personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['max']) && move_uploaded_file($_FILES['myfile']['tmp_name'],$uploadFile))
                 {
                     echo "<br>file uploaded successfully";
-                    $data = $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['Personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'] . "\n";
+                    $data =  "\n" . $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['Personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'];
                     $ret = file_put_contents('singles.txt', $data, FILE_APPEND | LOCK_EX);
 
                 }
