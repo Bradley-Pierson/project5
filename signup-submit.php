@@ -28,6 +28,8 @@
 		$name = $gender = $age = $personality = $min = $max = "";
 		$valid = true;
 
+
+
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  if (empty($_POST["name"])) {
 		    $nameErr = "<br> Name is required </br>";
@@ -95,7 +97,15 @@
 		  	$valid = false;
 		  }
 	   		  
-		  if(!$valid){		  		  		   
+		  if(!$valid){
+		  session_start();
+		   $_SESSION['nameErr'] = $nameErr;
+		   $_SESSION['genderErr'] = $genderErr;	
+		   $_SESSION['ageErr'] = $ageErr;
+		   $_SESSION['personalityErr'] = $personalityErr;
+		   $_SESSION['minErr'] = $minErr;
+		   $_SESSION['maxErr'] = $maxErr;
+
 		   header('Location: signup.php? ');
 		   exit();
 		  }			    
