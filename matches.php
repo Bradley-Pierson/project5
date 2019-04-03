@@ -20,6 +20,17 @@
 	</head>
 
 	<body>
+
+
+		<?php
+		// define variables and set to empty values
+		$nameErr = "";
+		$name = "";
+		
+		session_start();
+		$nameErr = $_SESSION['nameErr'];
+		?>
+
 		<div id="bannerarea">
 			<img src="match.png" alt="banner logo" /> <br />
 			where meek geeks meet
@@ -28,8 +39,8 @@
 		<div>
 			<h1>Returning User:</h1>
 
-			<form action="matches-submit.php" method="post">
-				<br> Name: <input type="text" name="name"> </br>
+			<form action="matches-submit.php?name=$name" method="get">
+				<br> Name: <input type="text" name="name"> <span class="error">* <?php echo $nameErr;?></span> </br>
 				<input type="submit" value="Submit">
 			</form>
 

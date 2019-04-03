@@ -32,68 +32,68 @@
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  if (empty($_POST["name"])) {
-		    $nameErr = "<br> Name is required </br>";
+		    $nameErr = " Name is required ";
 		    $valid = false;
 		  } 		  
 		  if (empty($_POST["gender"])) {
-		    $genderErr = "<br>Gender is required </br>";
+		    $genderErr = "Gender is required ";
 		    $valid = false;
 		  } 		    
 		  if (empty($_POST["age"])) {
-		    $ageErr = "<br> Age is required </br>";
+		    $ageErr = " Age is required ";
 		    $valid = false;
 		  } else{
 		  	if(!is_numeric($_POST["age"]) || strlen($_POST["age"]) > 2){
-		  		$ageErr = "<br> Enter a valid age </br>";
+		  		$ageErr = " Enter a valid age ";
 		  		$valid = false;
 		  	}
 		  }
 		  if (empty($_POST["personality"])) {
-		    $personalityErr = " <br> Personality type is required </br>";
+		    $personalityErr = "  Personality type is required ";
 		    $valid = false;
 		  } else {
 			if(!preg_match('/[A-Z]/', $_POST["personality"]) || strlen($_POST["personality"]) != 4){
-		  		$personalityErr = "<br> Enter a valid personality type </br>";
+		  		$personalityErr = " Enter a valid personality type ";
 		  		$valid = false;
 		  	}
 			if ($_POST["personality"][0] != 'I' && $_POST["personality"][0] != 'E') {
-		  		$personalityErr = "<br> Enter a valid personality type ex ESTJ </br>";
+		  		$personalityErr = " Enter a valid personality type ";
 		  		$valid = false;
 			}
 			if ($_POST["personality"][1] != 'N' && $_POST["personality"][1] != 'S') {
-		  		$personalityErr = "<br> Enter a valid personality type ex ESTJ </br>";
+		  		$personalityErr = " Enter a valid personality type  ";
 		  		$valid = false;
 			}					  	
 			if ($_POST["personality"][2] != 'F' && $_POST["personality"][2] != 'T') {
-		  		$personalityErr = "<br> Enter a valid personality type ex ESTJ </br>";
+		  		$personalityErr = " Enter a valid personality type ";
 		  		$valid = false;
 			}
 			if ($_POST["personality"][3] != 'J' && $_POST["personality"][3] != 'P') {
-		  		$personalityErr = "<br> Enter a valid personality type ex ESTJ </br>";
+		  		$personalityErr = " Enter a valid personality type  ";
 		  		$valid = false;
 			}			
 				
 		  }
 		  if (empty($_POST["min"])) {
-		    $minErr = "<br> min age is required </br> ";
+		    $minErr = " min age is required  ";
 		    $valid = false;
 		  } else{
 		  	if(!is_numeric($_POST["min"]) || strlen($_POST["min"]) > 2){
-		  		$minErr = "<br> Enter a valid min age  </br>";
+		  		$minErr = " Enter a valid min age  ";
 		  		$valid = false;
 		  	}
 		  }
 		  if (empty($_POST["max"])) {
-		    $maxErr = "<br> max age is required  </br>";
+		    $maxErr = " max age is required  ";
 		    $valid = false;
 		  } else{
 		  	if(!is_numeric($_POST["max"]) || strlen($_POST["max"]) > 2){
-		  		$maxErr = "<br> Enter a valid max age </br> ";
+		  		$maxErr = " Enter a valid max age  ";
 		  		$valid = false;
 		  	}		  	
 		  }
-		  if(strlen($_POST["min"]) > strlen($_POST["max"])){
-		  	$minErr = "<br>min age is greater than max age </br> ";
+		  if($_POST["min"] > $_POST["max"]){
+		  	$minErr = "min age is greater than max age  ";
 		  	$valid = false;
 		  }
 	   		  
@@ -141,12 +141,7 @@
                 }
                 else{
                     echo "<br>upload failed. Please make sure all fields are completed";
-                    echo $nameErr;
-                    echo $genderErr;
-                    echo $ageErr;
-                    echo $personalityErr;
-                    echo $minErr;
-                    echo $maxErr;
+                  
                 }
 			?>
 
