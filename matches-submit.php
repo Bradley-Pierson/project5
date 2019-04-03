@@ -63,16 +63,16 @@
 			    $contents = file_get_contents("singles.txt");
 
 
-			    $verName;
-			    $verGender;
-			    $verAge;
-			    $verPersonality1;
-			    $verPersonality2;
-			    $verPersonality3;
-			    $verPersonality4;
-			    $verOS;
-			    $verMinAge;
-			    $verMaxAge;
+			    $verName = "";
+			    $verGender = "";
+			    $verAge = "";
+			    $verPersonality1 = "";
+			    $verPersonality2 = "";
+			    $verPersonality3 = "";
+			    $verPersonality4 = "";
+			    $verOS = "";
+			    $verMinAge = "";
+			    $verMaxAge = "";
 
 
                 $line = explode("\n",$contents);
@@ -97,6 +97,14 @@
                         $count = $count + 1;
                     }
                 }
+
+				  if (empty($verGender)) {
+				   $nameErr = " User not found ";
+				   session_start();
+				   $_SESSION['nameErr'] = $nameErr;
+				   header('Location: matches.php ');
+				   exit();				    
+				  } 	
 
 
                 $dirname = "Images";
