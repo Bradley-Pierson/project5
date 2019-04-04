@@ -26,13 +26,27 @@
 		$nameErr = $genderErr = $ageErr = $personalityErr = $minErr = $maxErr = "";
 		$name = $gender = $age = $personality = $min = $max = "";
 		
+
 		session_start();
-		$nameErr = $_SESSION['nameErr'];
-		$genderErr = $_SESSION['genderErr'];
-		$ageErr = $_SESSION['ageErr'];
-		$personalityErr = $_SESSION['personalityErr'];
-		$minErr =  $_SESSION['minErr'];
-		$maxErr = $_SESSION['maxErr'];
+		if(!empty($_SESSION['nameErr'])){
+		$nameErr = $_SESSION['nameErr'];		
+		}
+		if(!empty($_SESSION['genderErr'])){
+		$genderErr = $_SESSION['genderErr'];		
+		}
+		if(!empty($_SESSION['ageErr'])){
+		$ageErr = $_SESSION['ageErr'];	
+		}
+		if(!empty($_SESSION['personalityErr'])){
+		$personalityErr = $_SESSION['personalityErr'];	
+		}
+		if(!empty($_SESSION['minErr'])){
+		$minErr =  $_SESSION['minErr'];		
+		}
+		if(!empty($_SESSION['maxErr'])){
+		$maxErr = $_SESSION['maxErr'];		
+		}										
+		session_destroy();
 		?>
 
 
