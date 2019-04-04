@@ -140,12 +140,11 @@
 
                         if($twoNames == false){
                             $image = $personFirstName . ".jpg";
-                            echo nl2br("<img src=Images/$image /> <h1>$personName<br>gender: $gender<br>age: $age<br>personality: $personality<br>OS: $os</h1>");
-
+                            echo "<div class='match'>" . nl2br("<p><img src=Images/$image /> $personName</p><br><strong>gender: </strong>$gender<br><strong>age: </strong>$age<br><strong>personality: </strong>$personality<br><strong>OS: </strong>$os" . "</div>");
                         }
                         else {
                             $image = $personFirstName . "_" . $personLastName . ".jpg";
-                            echo nl2br("<img src=Images/$image /> <h1>$personName<br>gender: $gender<br>age: $age<br>personality: $personality<br>OS: $os</h1>");
+                            echo "<div class='match'>" . nl2br("<p><img src=Images/$image /> $personName</p><br><strong>gender: </strong>$gender<br><strong>age: </strong>$age<br><strong>personality: </strong>$personality<br><strong>OS: </strong>$os" . "</div>");
 
                         }
                     }
