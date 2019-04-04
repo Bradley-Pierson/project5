@@ -50,27 +50,29 @@
 		</div>
 
 		<div>
-			<h1>New User Signup:</h1>
+			
 
 			<form enctype="multipart/form-data" method="post" action="signup-submit.php" >
-				<br> Name: <input type="text" name="name"> <span class="error">* <?php echo $nameErr;?></span> </br>
-				<br> Gender: <input type="radio" name="gender" value="Male"> Male <input type="radio" name="gender" value="Female"> Female * <span class="error"> <?php echo $genderErr;?></span></br>
-				<br> Age: <input type="text" name="age" > *<span class="error"> <?php echo $ageErr;?></span> </br>
-				<br> Personality type: <input type="text" name="personality" > <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type ?)  </a>  <span class="error">  <?php echo $personalityErr;?></span> </br>
-				<br> Favorite OS: 
+				<fieldset>
+				<legend>New User Signup:</legend>
+				<br> <strong> Name: </strong> <input type="text" name="name" size="15"> <span class="error">* <?php echo $nameErr;?></span> </br>
+				<br> <strong> Gender: </strong> <input type="radio" name="gender" value="Male"> Male <input type="radio" name="gender" value="Female"> Female * <span class="error"> <?php echo $genderErr;?></span></br>
+				<br> <strong>Age: </strong><input type="text" name="age" size="4" > *<span class="error"> <?php echo $ageErr;?></span> </br>
+				<br> <strong>Personality type:</strong> <input type="text" name="personality" size="4" > <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type ?)  </a>  <span class="error">  <?php echo $personalityErr;?></span> </br>
+				<br> <strong>Favorite OS: </strong>
 					<select name="OS">
 					  <option value="Windows">Windows</option>
 					  <option value="Mac OS X">Mac OS X</option>
 					  <option value="Linux">Linux</option>
 					</select>
  				</br>
- 				<br> Seeking age: <input type="text" name="min" placeholder="min" > to <input type="text" name="max" placeholder="max" >  <span class="error">  <?php echo $minErr;?><?php echo $maxErr;?> </span></br>
+ 				<br> <strong>Seeking age: </strong><input type="text" name="min" placeholder="min" size="4" > to <input type="text" name="max" placeholder="max" size="4" >  <span class="error">  <?php echo $minErr;?><?php echo $maxErr;?> </span></br>
  				<br>
-                Upload photo <input type="file" name="myfile">
+                <strong> Upload photo </strong><input type="file" name="myfile">
                 </br>
  				<input type="submit" value="Submit">
 
-
+ 				</fieldset>
 			</form>
 		</div>
 

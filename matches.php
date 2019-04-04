@@ -37,11 +37,14 @@
 		</div>
 
 		<div>
-			<h1>Returning User:</h1>
+			
 
 			<form action="matches-submit.php?name=$name" method="get">
-				<br> Name: <input type="text" name="name"> <span class="error">* <?php echo $nameErr;?></span> </br>
+				<fieldset>
+				<legend>Returning User:</legend>
+				<br> <strong> Name: </strong> <input type="text" name="name" size="15"> <span class="error">* <?php echo $nameErr;?></span> </br>
 				<input type="submit" value="Submit">
+				</fieldset>
 			</form>
 
 		</div>

@@ -128,25 +128,36 @@
 			<br>
 
 			<?php
-			    $name = $_POST["name"];
-			    echo "Welcome to Match, " . $name;
-			    $targetDir = "Images/";
-                $uploadFile = $targetDir.$_FILES['myfile']['name'];
-    		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['max']) && move_uploaded_file($_FILES['myfile']['tmp_name'],$uploadFile))
-                {
-                    echo "<br>file uploaded successfully";
-                    $data =  "\n" . $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'];
-                    $ret = file_put_contents('singles.txt', $data, FILE_APPEND | LOCK_EX);
 
+
+
+
+                if(empty($nameErr)){
+				    $name = $_POST["name"];
+				    echo "Welcome to Match, " . $name;
+				    $targetDir = "Images/";
+	                $uploadFile = $targetDir.$_FILES['myfile']['name'];
+	    		    if(isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['personality']) && isset($_POST['OS']) && isset($_POST['min']) && isset($_POST['max']) && move_uploaded_file($_FILES['myfile']['tmp_name'],$uploadFile))
+	                {
+	                    echo "<br>file uploaded successfully";
+	                    $data =  "\n" . $_POST['name'] . "," . $_POST['gender'] . "," . $_POST['age'] . "," . $_POST['personality'] . "," . $_POST['OS'] . "," . $_POST['min'] . "," . $_POST['max'];
+	                    $ret = file_put_contents('singles.txt', $data, FILE_APPEND | LOCK_EX);
+
+	                }
+	                else{
+	                    echo "<br>upload failed. Please make sure all fields are completed";
+	                  
+	                }
+                }else{
+                	echo $nameErr;
                 }
-                else{
-                    echo "<br>upload failed. Please make sure all fields are completed";
-                  
-                }
+
+
+
 			?>
 
 			<br>
-			<br> <a href="matches.php">Now log in to see your matches!</a><br>
+			<br> Now <a href="matches.php">log in to see your matches!</a><br>
 
 		</div>
 
